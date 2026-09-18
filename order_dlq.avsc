@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "OrderDLQ",
+  "namespace": "com.assignment.kafka",
+  "fields": [
+    { "name": "orderId",      "type": ["null", "string"], "default": null },
+    { "name": "product",      "type": ["null", "string"], "default": null },
+    { "name": "price",        "type": ["null", "float"],  "default": null },
+    { "name": "rawPayload",   "type": ["null", "bytes"],  "default": null,
+      "doc": "Original raw bytes, kept only when the message could not even be Avro-decoded" },
+    { "name": "errorReason",  "type": "string" },
+    { "name": "retryCount",   "type": "int" },
+    { "name": "failedAtIso",  "type": "string" }
+  ]
+}
